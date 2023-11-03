@@ -97,14 +97,14 @@ resource "aws_eks_node_group" "nodes_general" {
   force_update_version = false
 
   # List of instance types associated with the EKS Node Group
-  instance_types = ["t3.small"]
+  instance_types = ["t3.medium"]
 
   labels = {
     role = "nodes-general"
   }
 
   # Kubernetes version
-  version = "1.24"
+  version = "1.27"
 
   # Ensure that IAM Role permissions are created before and deleted after EKS Node Group handling.
   # Otherwise, EKS will not be able to properly delete EC2 Instances and Elastic Network Interfaces.
